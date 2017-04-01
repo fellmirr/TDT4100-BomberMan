@@ -21,7 +21,6 @@ public class Main extends Application {
 	}
 	
 	public static void main(String[] args) {
-		SimpleClass testClass = new SimpleClass();
 		launch(args);
 	}
 }
