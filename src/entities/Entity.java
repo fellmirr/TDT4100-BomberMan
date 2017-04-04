@@ -20,4 +20,8 @@ public class Entity {
 	public Image getSprite() {
 		return sprite;
 	}
+	
+	public int getHeight() {
+		return this.height;
+	}
 }

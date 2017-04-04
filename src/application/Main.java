@@ -3,6 +3,7 @@ package application;
 import java.util.List;
 import java.util.ArrayList;
 
+import entities.Box;
 import entities.Entity;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -36,7 +37,17 @@ public class Main extends Application {
 			
 			final long startNanoTime = System.nanoTime();
 			
-			board[8][8] = new Entity(0,0,0,0,"adam1.png");
+			board[0][0] = new Box(0,0,0,60,"Wall.png");
+			board[0][1] = new Box(0,0,0,60,"Wall.png");
+			board[0][2] = new Box(0,0,0,60,"Wall.png");
+			board[0][3] = new Box(0,0,0,60,"Wall.png");
+			board[0][4] = new Box(0,0,0,60,"Wall.png");
+			
+			board[1][0] = new Box(0,0,0,60,"Brick.png");
+			board[1][1] = new Box(0,0,0,60,"Brick.png");
+			board[2][2] = new Box(0,0,0,60,"Brick.png");
+			board[2][3] = new Box(0,0,0,60,"Brick.png");
+			board[3][4] = new Box(0,0,0,60,"Brick.png");
 			
 			new AnimationTimer() {
 				@Override
@@ -45,17 +56,14 @@ public class Main extends Application {
 					double t = (currentNanoTime - startNanoTime) / 1000000000.0; 
 					
 					//Handle input
-					ArrayList<KeyCode> input = keyboardInput.getInput();
-					for (int i = 0; i < input.toArray().length; i++) {
-						//System.out.println(input.get(i).getName());
-					}
+					//ArrayList<KeyCode> input = keyboardInput.getInput();
 					
 					//Draw board
 					for (int i = 0; i < 15; i++) {
 						for (int j = 0; j < 15; j++) {
 							if (board[i][j] != null) {
 								Entity ent = board[i][j];
-								gc.drawImage(ent.getSprite(), i*48, j*48);
+								gc.drawImage(ent.getSprite(), i*48, j*48 - (ent.getHeight() - 48));
 							}
 							else {
 								gc.drawImage(new Image("sprites/SimpleSprite.png"), i*48, j*48);
