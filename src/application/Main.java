@@ -1,19 +1,73 @@
 package application;
 	
+import java.util.List;
+import java.util.ArrayList;
+
+import entities.Entity;
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 
 
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
+		Entity[][] board = new Entity[12][12];
+		
+		
 		try {
 			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			Scene scene = new Scene(root,576,576);
+			
+			InputHandler keyboardInput = new KeyboardInputHandler(scene);
+			
 			primaryStage.setScene(scene);
+			
+			Canvas canvas = new Canvas(576,576);
+			root.getChildren().add(canvas);
+			
+			GraphicsContext gc = canvas.getGraphicsContext2D();
+			
+			final long startNanoTime = System.nanoTime();
+			
+			board[8][8] = new Entity(0,0,0,0,"adam1.png");
+			
+			new AnimationTimer() {
+				@Override
+				public void handle(long currentNanoTime) {
+					// TODO Auto-generated method stub
+					double t = (currentNanoTime - startNanoTime) / 1000000000.0; 
+					
+					//Handle input
+					ArrayList<KeyCode> input = keyboardInput.getInput();
+					for (int i = 0; i < input.toArray().length; i++) {
+						//System.out.println(input.get(i).getName());
+					}
+					
+					//Draw board
+					for (int i = 0; i < 12; i++) {
+						for (int j = 0; j < 12; j++) {
+							if (board[i][j] != null) {
+								Entity ent = board[i][j];
+								gc.drawImage(ent.getSprite(), i*48, j*48);
+							}
+							else {
+								gc.drawImage(new Image("sprites/SimpleSprite.png"), i*48, j*48);
+							}
+							
+						}
+					}
+					
+				}
+			}.start();
+		
+			
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
