@@ -1,5 +1,9 @@
 package application;
 
+import java.util.ArrayList;
+
+import javafx.scene.input.KeyCode;
+
 public interface InputHandler {
-	void input();
+	ArrayList<KeyCode> getKeys();
 }

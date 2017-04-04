@@ -24,14 +24,8 @@ public class KeyboardInputHandler implements InputHandler {
 			}
 		});
 	}
-	
-	public ArrayList<KeyCode> getInput() {
+
+	public ArrayList<KeyCode> getKeys() {
 		return this.input;
 	}
-
-	public void input() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

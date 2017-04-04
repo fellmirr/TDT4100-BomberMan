@@ -1,6 +1,5 @@
 package application;
-	
-import java.util.List;
+
 import java.util.ArrayList;
 
 import entities.Box;
@@ -12,8 +11,9 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.input.KeyCode;
+
 
 
 public class Main extends Application {
@@ -45,7 +45,7 @@ public class Main extends Application {
 			
 			board[1][0] = new Box(0,0,0,64,"Brick.png");
 			board[1][1] = new Box(0,0,0,64,"Brick.png");
-			board[2][2] = new Box(0,0,0,64,"Brick.png");
+			board[2][2] = new Box(0,0,0,64,"SandakerStanding.png");
 			board[2][3] = new Box(0,0,0,64,"Brick.png");
 			board[3][4] = new Box(0,0,0,64,"Brick.png");
 			
@@ -56,9 +56,10 @@ public class Main extends Application {
 					double t = (currentNanoTime - startNanoTime) / 1000000000.0; 
 					
 					//Handle input
-					//ArrayList<KeyCode> input = keyboardInput.getInput();
-					
-					System.out.println(t);
+					ArrayList<KeyCode> keyboard1Input = keyboardInput.getKeys();
+					/*for (int i = 0; i < ) {
+						
+					}*/
 					
 					//Draw board
 					for (int i = 0; i < 15; i++) {
@@ -76,7 +77,6 @@ public class Main extends Application {
 					
 				}
 			}.start();
-		
 			
 			primaryStage.show();
 		} catch(Exception e) {
