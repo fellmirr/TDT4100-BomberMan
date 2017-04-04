@@ -37,17 +37,17 @@ public class Main extends Application {
 			
 			final long startNanoTime = System.nanoTime();
 			
-			board[0][0] = new Box(0,0,0,60,"Wall.png");
-			board[0][1] = new Box(0,0,0,60,"Wall.png");
-			board[0][2] = new Box(0,0,0,60,"Wall.png");
-			board[0][3] = new Box(0,0,0,60,"Wall.png");
-			board[0][4] = new Box(0,0,0,60,"Wall.png");
+			board[0][0] = new Box(0,0,0,64,"Wall.png");
+			board[0][1] = new Box(0,0,0,64,"Wall.png");
+			//board[0][2] = new Box(0,0,0,64,"Wall.png");
+			board[0][3] = new Box(0,0,0,64,"Wall.png");
+			board[0][4] = new Box(0,0,0,64,"Wall.png");
 			
-			board[1][0] = new Box(0,0,0,60,"Brick.png");
-			board[1][1] = new Box(0,0,0,60,"Brick.png");
-			board[2][2] = new Box(0,0,0,60,"Brick.png");
-			board[2][3] = new Box(0,0,0,60,"Brick.png");
-			board[3][4] = new Box(0,0,0,60,"Brick.png");
+			board[1][0] = new Box(0,0,0,64,"Brick.png");
+			board[1][1] = new Box(0,0,0,64,"Brick.png");
+			board[2][2] = new Box(0,0,0,64,"Brick.png");
+			board[2][3] = new Box(0,0,0,64,"Brick.png");
+			board[3][4] = new Box(0,0,0,64,"Brick.png");
 			
 			new AnimationTimer() {
 				@Override
