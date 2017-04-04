@@ -18,18 +18,18 @@ import javafx.scene.layout.BorderPane;
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
-		Entity[][] board = new Entity[12][12];
+		Entity[][] board = new Entity[15][15];
 		
 		
 		try {
 			BorderPane root = new BorderPane();
-			Scene scene = new Scene(root,576,576);
+			Scene scene = new Scene(root,720,720);
 			
 			InputHandler keyboardInput = new KeyboardInputHandler(scene);
 			
 			primaryStage.setScene(scene);
 			
-			Canvas canvas = new Canvas(576,576);
+			Canvas canvas = new Canvas(720,720);
 			root.getChildren().add(canvas);
 			
 			GraphicsContext gc = canvas.getGraphicsContext2D();
@@ -51,8 +51,8 @@ public class Main extends Application {
 					}
 					
 					//Draw board
-					for (int i = 0; i < 12; i++) {
-						for (int j = 0; j < 12; j++) {
+					for (int i = 0; i < 15; i++) {
+						for (int j = 0; j < 15; j++) {
 							if (board[i][j] != null) {
 								Entity ent = board[i][j];
 								gc.drawImage(ent.getSprite(), i*48, j*48);
