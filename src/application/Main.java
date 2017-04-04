@@ -58,6 +58,8 @@ public class Main extends Application {
 					//Handle input
 					//ArrayList<KeyCode> input = keyboardInput.getInput();
 					
+					System.out.println(t);
+					
 					//Draw board
 					for (int i = 0; i < 15; i++) {
 						for (int j = 0; j < 15; j++) {
@@ -66,7 +68,7 @@ public class Main extends Application {
 								gc.drawImage(ent.getSprite(), i*48, j*48 - (ent.getHeight() - 48));
 							}
 							else {
-								gc.drawImage(new Image("sprites/SimpleSprite.png"), i*48, j*48);
+								gc.drawImage(new Image("sprites/FloorTile.png"), i*48, j*48);
 							}
 							
 						}
