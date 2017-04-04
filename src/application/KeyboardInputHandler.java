@@ -29,4 +29,9 @@ public class KeyboardInputHandler implements InputHandler {
 		return this.input;
 	}
 
+	public void input() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
