@@ -2,6 +2,10 @@ package entities;
 
 public class Player extends Entity {
 	
+	public Player(float x, float y, int width, int height, String fileName) {
+		super(x, y, width, height, fileName);
+	}
+	
 	private double speed;
 	private int bombCapacity;
 	private int currentBombs;
@@ -13,9 +17,8 @@ public class Player extends Entity {
 	}
 	
 	public void placeBomb(){
-		
 		currentBombs -= 1;
-		Bomb bomb = new Bomb(x,y);
+		Bomb bomb = new Bomb(this.x,this.y);
 	}
 	
 	public void powerUp(char type){
