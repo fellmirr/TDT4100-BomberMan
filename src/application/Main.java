@@ -48,6 +48,12 @@ public class Main extends Application {
 			board[2][2] = new Box(0,0,0,64,"SandakerStanding.png");
 			board[2][3] = new Box(0,0,0,64,"Brick.png");
 			board[3][4] = new Box(0,0,0,64,"Brick.png");
+			board[5][6] = new Box(0,0,0,64,"Brick.png");
+			board[5][7] = new Box(0,0,0,64,"Brick.png");
+			board[5][8] = new Box(0,0,0,64,"Brick.png");
+			board[6][6] = new Box(0,0,0,64,"Brick.png");
+			board[6][7] = new Box(0,0,0,64,"Brick.png");
+			board[6][8] = new Box(0,0,0,64,"Brick.png");
 			
 			new AnimationTimer() {
 				@Override
@@ -64,13 +70,13 @@ public class Main extends Application {
 					//Draw board
 					for (int i = 0; i < 15; i++) {
 						for (int j = 0; j < 15; j++) {
+							gc.drawImage(new Image("sprites/FloorTile.png"), i*48, j*48);
+
 							if (board[i][j] != null) {
 								Entity ent = board[i][j];
 								gc.drawImage(ent.getSprite(), i*48, j*48 - (ent.getHeight() - 48));
 							}
-							else {
-								gc.drawImage(new Image("sprites/FloorTile.png"), i*48, j*48);
-							}
+							
 							
 						}
 					}
