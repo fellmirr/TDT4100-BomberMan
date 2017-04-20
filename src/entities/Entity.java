@@ -24,4 +24,12 @@ public class Entity {
 	public int getHeight() {
 		return this.height;
 	}
+	
+	public float getY() {
+		return this.y;
+	}
+	
+	public float getX() {
+		return this.x;
+	}
 }
